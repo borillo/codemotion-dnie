@@ -1,6 +1,6 @@
 .metadata/
 CryptoApplet/
 Servers/
-firma-dnie/target
-firma-dnie/.classpath
-firma-dnie/.settings
+dnie-signature/target
+dnie-signature/.classpath
+dnie-signature/.settings
