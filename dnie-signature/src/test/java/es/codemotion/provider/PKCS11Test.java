@@ -3,6 +3,7 @@ package es.codemotion.provider;
 import java.io.ByteArrayInputStream;
 import java.security.KeyStore;
 import java.security.Security;
+import java.util.Scanner;
 
 import es.codemotion.signers.PKCS1Signer;
 
@@ -22,7 +23,12 @@ public class PKCS11Test extends ProviderBaseTest
                 configuration.getBytes()));
         Security.addProvider(provider);
 
+        System.out.print("PIN: ");
+        
+        Scanner scanner = new Scanner(System.in);
+        String passwordInput = scanner.nextLine();
+        
         keyStore = KeyStore.getInstance("PKCS11", "SunPKCS11-dnie");
-        keyStore.load(null, "Heroes2000".toCharArray());
+        keyStore.load(null, passwordInput.trim().toCharArray());
     }
 }
